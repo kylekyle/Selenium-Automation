@@ -1,3 +1,5 @@
+See the main README in the "Selenium Automation" directory for instructions on how to run these examples. 
+
 Given a roster of cadet names, this program will pull the following fields into a TSV file:
 
  * Name 

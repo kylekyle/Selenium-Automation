@@ -1,14 +1,16 @@
 require 'csv' 
 require 'watir'
 
-Selenium::WebDriver::Chrome.path = "C:/Users/#{ENV['USER']}/AppData/Local/Chromium/Application/chrome.exe"
+# so users don't have to install it
+driver = File.join(Dir.pwd,"../../installation/chromedriver.exe")
+Selenium::WebDriver::Chrome.driver_path = File.absolute_path(driver)
 
 browser = Watir::Browser.new :chrome, :switches => %w[--log-level=3 --test-type]
 browser.goto 'https://apps.usma.edu/ams/main.cfm'
 browser.link(text: "I agree to the above. Continue into AMS").click
 
 # for some reason there are two browser links, only one is visible
-whois = browser.links(text: "WHOIS").find(&:visible?)
+whois = browser.links(text: "WHOIS").find(&:visible_text?)
 
 if whois
 	whois.click

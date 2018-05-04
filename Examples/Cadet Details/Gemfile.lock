@@ -8,6 +8,7 @@ GEM
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    unidecoder (1.1.2)
     watir (6.10.2)
       selenium-webdriver (~> 3.4, >= 3.4.1)
 
@@ -15,7 +16,8 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  unidecoder
   watir
 
 BUNDLED WITH
-   1.16.0
+   1.16.1
